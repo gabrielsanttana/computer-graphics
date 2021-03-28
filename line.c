@@ -20,9 +20,9 @@ int main(int argc, char** argv){
 }
 
 void init(void){
-  glClearColor(0.3, 1.0, 1.0, 0.3);    // cor de fundo
-  glOrtho (0, 256, 0, 256, -1 ,1);     // modo de projecao ortogonal
-} 
+  glClearColor(0.3, 1.0, 1.0, 0.3); //defines the background color
+  glOrtho (0, 256, 0, 256, -1 ,1); //set orthogonal mode
+}
 
 void display(void) {
   glClear(GL_COLOR_BUFFER_BIT); //clears the window
