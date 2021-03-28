@@ -29,8 +29,8 @@ void display(void) {
   glColor3f (0.0, 0.0, 0.0); //color of the line
   glLineWidth(4.0); //width of the line
   glBegin(GL_LINES);
-  glVertex2i(40,200); //coordenates of the line inital point
-  glVertex2i(200,10); //coordenates of the line end point
+  glVertex2i(40, 200); //coordenates of the line inital point
+  glVertex2i(200, 10); //coordenates of the line end point
   glEnd();
   glFlush();
 }
