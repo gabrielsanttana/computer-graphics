@@ -22,18 +22,18 @@ void drawHouseWindow();
 int GL_MODE = GL_LINE;
 
 int main(int argc, char** argv) {
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	glutInitWindowSize(WIDTH - 200, HEIGHT - 200);
-	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Casinha");
-	init();
-	glutDisplayFunc(display);
-	glutKeyboardFunc(onKeyboardPress);
-	glutMouseFunc(onMouseUp);
-	glutMainLoop();
+  glutInit(&argc, argv);
+  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+  glutInitWindowSize(WIDTH - 200, HEIGHT - 200);
+  glutInitWindowPosition(100, 100);
+  glutCreateWindow("Casinha");
+  init();
+  glutDisplayFunc(display);
+  glutKeyboardFunc(onKeyboardPress);
+  glutMouseFunc(onMouseUp);
+  glutMainLoop();
 
-	return 0;
+  return 0;
 }
 
 void init(void) {
@@ -50,92 +50,92 @@ void display(void) {
 }
 
 void drawMesh(void) {  
-	glLineWidth(1.0);
-	int meshSize = 50;
-	int XAxisCount;
-	int YAxisCount;
+  glLineWidth(1.0);
+  int meshSize = 50;
+  int XAxisCount;
+  int YAxisCount;
 	
-	for(XAxisCount = 0; XAxisCount < WIDTH; XAxisCount += meshSize){
-		for(YAxisCount = 0; YAxisCount < HEIGHT; YAxisCount += meshSize){
-			drawMeshTriangles(XAxisCount,YAxisCount,meshSize);
-		}	
-	}
+  for(XAxisCount = 0; XAxisCount < WIDTH; XAxisCount += meshSize) {
+    for(YAxisCount = 0; YAxisCount < HEIGHT; YAxisCount += meshSize) {
+      drawMeshTriangles(XAxisCount,YAxisCount,meshSize);
+    }	
+  }
 }
 
 void drawMeshTriangles(int x, int y, int meshSize) {
-	glBegin(GL_TRIANGLE_STRIP);
-	glVertex2i(x, y);  
+  glBegin(GL_TRIANGLE_STRIP);
+  glVertex2i(x, y);  
   glVertex2i(x, y + meshSize);  
   glVertex2i(x + meshSize, y + meshSize); 
   glVertex2i(x + meshSize, y); 
   glVertex2i(x, y);
-	glEnd();
-	glFlush();
+  glEnd();
+  glFlush();
 }
 
 void drawHouseCeil() {
   glColor3f (0.0, 0.0, 1.0); 
-	glBegin(GL_POLYGON);
-	glVertex2i(450, 300);glVertex2i(300,  450);glVertex2i(600, 450 );glVertex2i(750, 300);glVertex2i(450, 300);
-	glEnd();
+  glBegin(GL_POLYGON);
+  glVertex2i(450, 300);glVertex2i(300,  450);glVertex2i(600, 450 );glVertex2i(750, 300);glVertex2i(450, 300);
+  glEnd();
 }
 
 void drawHouseLateral() {
   glColor3f (0.0, 1.0, 0.0); 
-	glBegin(GL_POLYGON);
-	glVertex2i(450,  50);
+  glBegin(GL_POLYGON);
+  glVertex2i(450,  50);
   glVertex2i(450, 300);
   glVertex2i(750, 300);
   glVertex2i(750, 50);
   glVertex2i(450, 50);
-	glEnd();
+  glEnd();
 }
 
 void drawHouseInferiorFront() {
   glColor3f (1.0, 0.0, 0.0); 
-	glBegin(GL_POLYGON);
-	glVertex2i(150,50);
+  glBegin(GL_POLYGON);
+  glVertex2i(150,50);
   glVertex2i(150,300);
   glVertex2i(450,300);
   glVertex2i(450,50);
   glVertex2i(150,50);
-	glEnd();
+  glEnd();
 }
 
 void drawHouseSuperiorFront() {
   glColor3f(1.0, 0.0, 0.0); 
-	glBegin(GL_POLYGON);
-	glVertex2i(150, 300);
+  glBegin(GL_POLYGON);
+  glVertex2i(150, 300);
   glVertex2i(300, 450);
   glVertex2i(450, 300);
   glVertex2i(150, 300);
-	glEnd();
+  glEnd();
 }
 
 void drawHouseDoor() {
   glColor3f(1.0, 1.0, 0.0); 
-	glBegin(GL_POLYGON);
-	glVertex2i(250,50);
+  glBegin(GL_POLYGON); 
+  glVertex2i(250,50);
   glVertex2i(250,200);
   glVertex2i(350,200);
   glVertex2i(350,50);
   glVertex2i(250,50);
-	glEnd();
+  glEnd();
 }
 
 void drawHouseWindow() {
   glBegin(GL_POLYGON);
-	glVertex2i(550, 150);
+  glVertex2i(550, 150);
   glVertex2i(550, 250);
   glVertex2i(650, 250); 
   glVertex2i(650, 150);
   glVertex2i(550, 150);
-	glEnd();
+  glEnd();
 }
 
 void drawHouse() {
-	glLineWidth(4.0);           
-	glPolygonMode(GL_FRONT_AND_BACK, GL_MODE);
+  glLineWidth(4.0);           
+  glPolygonMode(GL_FRONT_AND_BACK, GL_MODE);
 
   drawHouseCeil();
   drawHouseLateral();
@@ -144,16 +144,16 @@ void drawHouse() {
   drawHouseDoor();
   drawHouseWindow();
 
-	glFlush();	
+  glFlush();	
 }
 
 void onMouseUp(int button, int state, int x, int y) {
-	if(GLUT_UP == state) {
+  if(GLUT_UP == state) {
     if(GL_MODE == GL_LINE) {
-			GL_MODE = GL_FILL;
-		} else {
-			GL_MODE = GL_LINE;
-		}
+      GL_MODE = GL_FILL;
+    } else {
+        GL_MODE = GL_LINE;
+    }
   }
 }
 
