@@ -1,6 +1,7 @@
 #VS Code
 .vscode
 
+bin
 # Prerequisites
 *.d
 
