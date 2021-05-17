@@ -28,76 +28,76 @@ void display(void){
 
   glRotatef ((GLfloat) rot, 0.0, 1.0, 0.0);
 
-  /* chao */
+  // floor
   glPushMatrix();
   glScalef (4.0, 0.2, 6.0);
   glutWireCube (1.0);
   glPopMatrix();
-   
-  /* parede esquerda */
+ 
+  // left wall
   glPushMatrix();
   glTranslatef (-1.9, 1.6, 0.0);
   glScalef (0.2, 3.0, 6.0);
   glutWireCube (1.0);
   glPopMatrix();
 
-  /*  parede fundo */
+  // back wall
   glPushMatrix();
   glTranslatef (0.0, 1.6, -2.9);
   glScalef (4.0, 3.0, 0.2);
   glutWireCube (1.0);
   glPopMatrix();
 
-  /* cama */
+  // bed
   glPushMatrix();
   glTranslatef (-1.3, 0.6, 0.0);
   glScalef (1.0, 0.2, 2.0);
   glutWireCube (1.0);
   glPopMatrix();
 
-  /* pe cama frente esquerdo */
+  // up-left bed foot
   glPushMatrix();
   glTranslatef (-1.7, 0.3, 0.9);
   glScalef (0.2, 0.4, 0.2);
   glutWireCube (1.0);
   glPopMatrix();
 
-  /* pe cama frente direito */
+  // up-right bed foot
   glPushMatrix();
   glTranslatef (-0.9, 0.3, 0.9);
   glScalef (0.2, 0.4, 0.2);
   glutWireCube (1.0);
   glPopMatrix();
 
-  /* pe cama cabeceira esquerdo */
+  // pe cama cabeceira esquerdo
   glPushMatrix();
   glTranslatef (-1.7, 0.6, -1.1);
   glScalef (0.2, 1.0, 0.2);
   glutWireCube (1.0);
   glPopMatrix();
 
-  /* pe cama cabeceira esquerdo */
+  // pe cama cabeceira esquerdo
   glPushMatrix();
   glTranslatef (-0.9, 0.6, -1.1);
   glScalef (0.2, 1.0, 0.2);
   glutWireCube (1.0);
   glPopMatrix();
   
-  /*Janela */
+  // window
   glPushMatrix();
   glTranslatef (0, 1.5, -3);
   glScalef (2, 1.1, 0.01);
   glutWireCube (1.0);
   glPopMatrix();
   
-  /*Grade vertical da janela */
+  // vertical window grid
   glPushMatrix();
   glTranslatef (0, 1.5, -3);
   glScalef (0.15, 1.1, 0.01);
   glutWireCube (1.0);
   glPopMatrix();
   
-  /*Armario*/
+  // wardrobe
   glPushMatrix();
   glTranslatef (1.5, 1.2, 1.75);
   glScalef (1.0, 2.5, 2.5);
@@ -124,10 +124,12 @@ void keyboard(unsigned char key, int x, int y){
       rot = (rot + 5) % 360;
       glutPostRedisplay();
       break;
+      
     case 'R':
       rot = (rot - 5) % 360;
       glutPostRedisplay();
       break;  
+      
     case 27:
       exit(0);
       break;
